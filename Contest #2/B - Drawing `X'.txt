@@ -1,0 +1,44 @@
+#include <bits/stdc++.h>
+using namespace std;
+ 
+#define ll long long
+#define ar array
+#define all(v)	 ((v).begin()), ((v).end())
+#define rall(v) (((v).rbegin()), ((v).rend())
+#define d(x) double(x)
+#define pb(x) push_back(x)
+#define sz(x) x.size()
+#define fi first
+const int MAX_N=1e3+2;
+ll n, m, a,b;
+ 
+int main(){
+    cin >> n;
+    int cnt=0;
+    for(int i=0;i<n/2;++i){
+        for(int j=0;j<n;++j){
+            if(j==cnt) cout << '\\';
+            else if(j==n-1-cnt) cout << "/", ++cnt;
+            else cout << '*';
+        }
+        cout << endl;
+    }
+    for(int i=0;i<n;++i){
+        if(i==n/2) cout << 'X';
+        else cout << "*";
+    }
+    cnt=1;
+    cout << endl;
+    for(int i=0;i<n/2;++i){
+        int p1=n/2-cnt, p2=n/2+cnt;
+        for(int j=0;j<n;++j){
+            if(j==p1) cout << "/";
+            else if(j==p2) cout << '\\';
+            else cout << '*';
+        }
+        cout << endl;
+        ++cnt;
+    }
+ 
+ 
+}
